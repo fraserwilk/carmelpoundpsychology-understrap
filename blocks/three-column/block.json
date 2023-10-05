@@ -1,0 +1,16 @@
+{
+    "name": "acf/three-column",
+    "title": "Three Column",
+    "description": "A custom three column block that uses ACF fields.",
+    "style": [ "file:./block-three-column.css" ],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["three-column", "image"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block-three-column.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}
