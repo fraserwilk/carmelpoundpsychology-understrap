@@ -20,7 +20,7 @@ defined( 'ABSPATH' ) || exit;
 				
 				if ( $sections ) :
 					// wrap every sub column in a row
-					echo '<div class="row">';
+					echo '<div class="row container-fluid p-0">';
 					foreach ( $sections as $section ) :
 						$template = str_replace( '_', '-', $section['acf_fc_layout'] );
 						

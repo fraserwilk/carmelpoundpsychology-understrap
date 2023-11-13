@@ -22,7 +22,7 @@
 		<div class="row">
 			<div class="col-4 col-sm-4" style="cursor: pointer;" onclick="window.location='<?php echo esc_url( $link ); ?>';">
 				<?php if ( $icon ) : 
-					$size = array(48, 48); // (thumbnail, medium, large, full or custom size)
+					$size = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
 					$attr = array(
 						'class' => '', // Add CSS classes to the image
 						'style' => 'background-color: primary;' ,  // Add inline CSS styles to the image
