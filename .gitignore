@@ -47,6 +47,5 @@ node_modules
 
 # Other Understrap specific files and directories
 phpcs.xml
-dist/
 dist-product/
 **/img

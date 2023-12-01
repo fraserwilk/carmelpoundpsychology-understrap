@@ -1,0 +1,16 @@
+{
+    "name": "acf/two-column",
+    "title": "Two Column",
+    "description": "A custom two column block that uses ACF fields.",
+    "style": [ "file:./block-two-column.css" ],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["two-column", "image"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block-two-column.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}
