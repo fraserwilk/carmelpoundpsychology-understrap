@@ -1,12 +1,10 @@
 <?php
 /**
- * The main template file
+ * Template Name: Front Page - CPP
  *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ * Template for displaying a page without sidebar even if a sidebar widget is published.
+ *
+ *
  *
  * @package Understrap
  */
@@ -21,7 +19,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 
 
-<div class="wrapper pt-0" id="index-wrapper">
+<div class="wrapper" id="index-wrapper">
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
@@ -34,11 +32,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 				<?php
 				$args = array(
-                    'post_type' => 'post',       // Post type
-                    'category_name' => 'homepage',  // Only show Posts with 'homepage' category
-                    'orderby' => 'date',         // Order by date
-                    'order' => 'ASC',           // Descending order (newest to oldest)
-                    'posts_per_page' => -1,      // Display all posts
+                    'post_type' => 'post',       	// Post type
+                    'category_name' => 'xxx',  // Only show Posts with 'homepage' category
+                    'orderby' => 'date',         	// Order by date
+                    'order' => 'ASC',           	// Descending order (newest to oldest)
+                    'posts_per_page' => -1,      	// Display all posts
                 );
                 
                 $sortorder = new WP_Query($args);
@@ -57,7 +55,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					}
 				} else {
 					
-					get_template_part( 'loop-templates/content', 'none' );
+					get_template_part( 'loop-templates/content', 'frontpage' );
 				}
 				?>
 

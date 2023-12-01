@@ -14096,6 +14096,14 @@ a.skip-link:not(:focus):not(:focus-within) {
   --custom-bg-color: primary;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+.wrapper {
+  padding-top: 0px;
+}
+
 /* a {
     position: relative;
   }
@@ -14142,6 +14150,15 @@ article.post.visible {
 
 .home-row-bg {
   background-color: #d1e3d9;
+}
+
+ul.navbar-nav li.dropdown:hover ul.dropdown-menu {
+  display: block;
+  margin: 0;
+}
+
+a.menu:after, .dropdown-toggle:after {
+  content: "";
 }
 
 .has-blue-color,

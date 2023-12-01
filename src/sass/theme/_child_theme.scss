@@ -2,6 +2,13 @@
     --custom-bg-color: primary;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+.wrapper {
+    padding-top: 0px;
+}
 
 // From css-tricks: https://css-tricks.com/css-link-hover-effects/#aa-the-passing-underline-link-hover-effect
 /* a {
@@ -59,4 +66,14 @@ article.post {
 // Colors
 .home-row-bg {
     background-color: $green-100;
+}
+
+
+ul.navbar-nav li.dropdown:hover ul.dropdown-menu {
+    display: block; 
+    margin: 0;
+}
+
+a.menu:after, .dropdown-toggle:after {
+  content: "";
 }
