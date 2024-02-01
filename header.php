@@ -31,11 +31,10 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
 
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
-		<div class="row bg-primary ">
-			<div class="col-2"></div>
-			<div class="col-8"><?php get_template_part( 'global-templates/navbar', $navbar_type . '-' . $bootstrap_version ); ?></div>
-			<div class="col-2"></div>
-		</div>
+
+		<?php get_template_part( 'global-templates/navbar', $navbar_type . '-' . $bootstrap_version ); ?>
+
+
 
 		
 
