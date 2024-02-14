@@ -6744,39 +6744,4 @@
 	})();
 
 	// Add your custom JS here.
-
-	// init Scrollmagic Controller
-	var controller = new ScrollMagic.Controller();
-	(function ($) {
-	  $(document).ready(function ($) {
-	    $('article.post').each(function () {
-	      var post = $(this);
-	      var id = post.attr('id');
-
-	      // build scene
-	      new ScrollMagic.Scene({
-	        triggerElement: "#" + id,
-	        triggerHook: 0.7,
-	        // show, when scrolled 10% into view
-	        offset: 50 // move trigger to center of element
-	      }).setClassToggle("#" + id, "visible") // add class to reveal
-	      .addTo(controller);
-	    });
-	  });
-	})(jQuery);
-
-	exports.Alert = alert;
-	exports.Button = button;
-	exports.Carousel = carousel;
-	exports.Collapse = collapse;
-	exports.Dropdown = dropdown;
-	exports.Modal = modal;
-	exports.Offcanvas = offcanvas;
-	exports.Popover = popover;
-	exports.Scrollspy = scrollspy;
-	exports.Tab = tab;
-	exports.Toast = toast;
-	exports.Tooltip = tooltip;
-
-}));
-//# sourceMappingURL=child-theme.js.map
+}

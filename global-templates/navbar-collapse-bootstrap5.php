@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
-<nav id="main-nav" class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark" aria-labelledby="main-nav-label">
+<nav id="main-nav" class="navbar navbar-expand-md fixed-top navbar-dark bg-dark" aria-labelledby="main-nav-label">
 
 	<h2 id="main-nav-label" class="screen-reader-text">
 		<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>
@@ -20,7 +20,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 	<div class="container">
 
-		<!-- Your site title as branding in the menu -->
+		<!-- Site title as branding in the menu -->
 		<?php if ( ! has_custom_logo() ) { ?>
 
 			<?php if ( is_front_page() && is_home() ) : ?>
@@ -46,19 +46,20 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<!-- The WordPress Menu goes here -->
 		<?php
-		wp_nav_menu(
-			array(
-				'theme_location'  => 'primary',
-				'container_class' => 'collapse navbar-collapse',
-				'container_id'    => 'navbarNavDropdown',
-				'menu_class'      => 'navbar-nav ms-auto text-uppercase text-dark fs-6 text-end',
-				'fallback_cb'     => '',
-				'menu_id'         => 'main-menu',
-				'depth'           => 2,
-				'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
-			)
-		);
+			wp_nav_menu(
+				array(
+					'theme_location'  => 'primary',
+					'container_class' => 'collapse navbar-collapse',
+					'container_id'    => 'navbarNavDropdown',
+					'menu_class'      => 'navbar-nav ms-auto text-uppercase text-dark fs-6 text-end',
+					'fallback_cb'     => '',
+					'menu_id'         => 'main-menu',
+					'depth'           => 2,
+					'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+				)
+			);
 		?>
+
 
 	</div><!-- .container(-fluid) -->
 

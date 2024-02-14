@@ -7,6 +7,48 @@ $green: #197541; // Carmel's green.
 
 $primary: $green;  // Primary brand color.
 
+// scss-docs-start gray-color-variables
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+// scss-docs-end gray-color-variables
+
+// fusv-disable
+// scss-docs-start gray-colors-map
+$grays: (
+  "100": $gray-100,
+  "200": $gray-200,
+  "300": $gray-300,
+  "400": $gray-400,
+  "500": $gray-500,
+  "600": $gray-600,
+  "700": $gray-700,
+  "800": $gray-800,
+  "900": $gray-900
+) !default;
+// scss-docs-end gray-colors-map
+
+// scss-docs-start theme-color-variables
+$primary:       $blue !default;
+$secondary:     $gray-600 !default;
+$success:       $green !default;
+// $info:          $cyan !default;
+// $warning:       $yellow !default;
+// $danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-900 !default;
+// scss-docs-end theme-color-variables
+
+
+
 
 $font-family-base: 'DM Sans Regular', sans-serif;
 $headings-font-family: 'Gloock Regular', serif;
@@ -28,3 +70,6 @@ $font-size-root:              null;
 $font-size-base:              1rem; // Assumes the browser default, typically `16px`
 $font-size-sm:                $font-size-base * .875;
 $font-size-lg:                $font-size-base * 1.25;
+
+// Card - equal heights by default
+$card-height: 100% 

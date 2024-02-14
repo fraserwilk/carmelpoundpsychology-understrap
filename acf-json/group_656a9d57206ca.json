@@ -37,7 +37,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "id",
+                            "return_format": "array",
                             "library": "all",
                             "min_width": "",
                             "min_height": "",
@@ -50,8 +50,8 @@
                         },
                         {
                             "key": "field_656ab21f50e7f",
-                            "label": "Title",
-                            "name": "title",
+                            "label": "Hero Title",
+                            "name": "hero_title",
                             "aria-label": "",
                             "type": "textarea",
                             "instructions": "",
@@ -504,20 +504,18 @@
             {
                 "param": "page",
                 "operator": "==",
-                "value": "191"
+                "value": "1092"
             }
         ]
     ],
-    "menu_order": -1,
-    "position": "acf_after_title",
-    "style": "default",
+    "menu_order": 1,
+    "position": "normal",
+    "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [
-        "the_content"
-    ],
+    "hide_on_screen": "",
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701504268
+    "modified": 1707703084
 }

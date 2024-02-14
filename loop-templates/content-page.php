@@ -13,18 +13,21 @@ defined( 'ABSPATH' ) || exit;
 
 	
 	<div class="entry-content">
-		<div class="row">
-		<div class="col-sm-2"></div>
-		<div class="col-sm-8">
-			<div class="row">
-			
+		
+	<?php 
+		if(is_page('185')) {
+			echo '<div class="container">';
+		}
+		else {
+		echo '<div class="container" style="padding-top: var(--space-mega);">';
+		}
+		?>
+
 				<?php
 				the_content();
 				understrap_link_pages();
 				?>
-			</div>
-		</div>
-		<div class="col-sm-2"></div>
+		
 		</div>
 
 	</div><!-- .entry-content -->

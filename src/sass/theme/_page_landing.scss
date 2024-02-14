@@ -1,0 +1,19 @@
+// Hero classes
+
+.hero-section {
+
+    .hero-image {
+        min-width: 100vw;
+        object-fit: cover;
+        height: 50vh;
+    }
+    
+    .hero-overlay {
+        @extend .h1;
+        color: $light;
+        position: absolute;
+        top: 5ch;
+        left: 8rem;
+        width: 20ch;
+    }
+}

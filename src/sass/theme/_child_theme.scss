@@ -1,33 +1,87 @@
 :root {
-    --custom-bg-color: primary;
-}
+    --custom-bg-color: $primary;
+    --size-step-0: clamp(1rem, 0.9661rem + 0.1695vw, 1.125rem);
+    --size-step-1: clamp(1.125rem, 1.0243rem + 0.5034vw, 1.4963rem);
+    --size-step-2: clamp(1.2656rem, 1.0692rem + 0.9822vw, 1.99rem);
+    --size-step-3: clamp(1.4238rem, 1.0921rem + 1.6585vw, 2.6469rem);
+    --size-step-4: clamp(1.6019rem, 1.0817rem + 2.6008vw, 3.52rem);
+    --size-step-5: clamp(1.8019rem, 1.0209rem + 3.9051vw, 4.6819rem);
+    --space-2xs: clamp(0.5rem, 0.4831rem + 0.0847vw, 0.5625rem);
+    --space-xs: clamp(0.75rem, 0.7161rem + 0.1695vw, 0.875rem);
+    --space-s: clamp(1rem, 0.9661rem + 0.1695vw, 1.125rem);
+    --space-m: clamp(1.5rem, 1.4492rem + 0.2542vw, 1.6875rem);
+    --space-l: clamp(2rem, 1.9322rem + 0.339vw, 2.25rem);
+    --space-xl: clamp(3rem, 2.8983rem + 0.5085vw, 3.375rem);
+    --space-m-xl: clamp(1.5rem, 0.9915rem + 2.5424vw, 3.375rem);
+    --space-mega: clamp(6rem, 4.5763rem + 7.1186vw, 11.25rem);
+    --gutter: var(--space-s);
+  }
 
-html {
+  html {
     scroll-behavior: smooth;
 }
+
+
+
+// Scroll progress animation
+.scroll-watcher {
+    height: 6px;
+    position: fixed;
+    top: 80px;
+    z-index: 1000;
+    background-color: $primary;
+    width: 100%;
+    scale: 0 1;
+    transform-origin: left;
+    animation: scroll-watcher linear;
+    animation-timeline: scroll();
+}
+
+@keyframes scroll-watcher {
+    to {scale: 1 1; }
+}
+// Scroll progress animation - end
+
+
+
+// Scroll sectionfp animation
+@media (prefers-reduced-motion: no-preference) {
+    .home-section-wrapper {
+        scale: .8; opacity: 0;
+        animation: fade-in linear forwards;
+        animation-timeline: view();
+        animation-range: entry 100px;
+    }
+
+    @keyframes fade-in {
+        to {scale: 1; opacity: 1;}
+    }
+}
+// Scroll sectionfp animation - end
 
 .wrapper {
     padding-top: 0px;
 }
 
-
-
-// Transition for home page articles.
-article.post {
-    // before css
-
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all ease 1s;
-
-    &.visible {
-    //after css
-
-    transform: translateY(0px);
-    opacity: 1;
-    }
+h1 {
+    font-size: var(--size-step-5);  // varies h1 size according to rem & viewport size (may extend to other headings)
+    letter-spacing: 2px;
 }
 
+h2 {
+    font-size: var(--size-step-4);
+  }
+  
+h3 {
+font-size: var(--size-step-2);
+}
+
+p, ul {
+    max-width: 60ch;
+}
+
+
+// Navigation styles
 .nav .navbar-nav li a{
     color: #FFF!important;
 }
@@ -41,14 +95,6 @@ article.post {
 }
 
 
-
-
-// Colors
-.home-row-bg {
-    background-color: $green-100;
-}
-
-
 ul.navbar-nav li.dropdown:hover ul.dropdown-menu {
     display: block; 
     margin: 0;
@@ -57,3 +103,87 @@ ul.navbar-nav li.dropdown:hover ul.dropdown-menu {
 a.menu:after, .dropdown-toggle:after {
   content: "";
 }
+
+// end Navigation styles
+
+// Service cards
+.servicebox {
+    display: flex;
+    align-items: stretch;
+    
+    .icon svg{
+        fill: $primary;
+    }
+    
+    .box {
+        flex: 0 1 auto;
+        @extend .card;
+        @extend .shadow;
+        border: $dark solid 1px;
+        padding: $spacer * 1.5;
+        
+        .wp-block-heading {
+            margin-top: 8px;
+            text-wrap:pretty;
+        }
+
+        .wp-block-buttons {
+            width: 100%;
+            margin-top: 8px;
+        }
+    }
+}
+// Service cards - end
+
+// Home page sections
+.home-section-wrapper{
+    padding: 0px 0;
+}
+
+.home-section-wrapper.bg-color {
+    background-color: $gray-400;
+}
+
+.testimonial-header {
+    @extend .container;
+    color: $light;
+    padding-top: 3rem;
+}
+
+.home-section-wrapper .testimonial {
+    color: $light;
+    @extend .container;
+
+    .testimonial-name {
+        text-transform: uppercase;
+        font-style: italic;
+        color: $light;
+    }
+
+    .testimonial-line {
+        color: $gray-300;
+        width: 95%;
+    }
+
+    &:before, &:after {
+        font-family: $headings-font-family;
+        color: $light;
+        position: relative;
+      }
+
+    &:before {
+        content: '“';
+        font-size: 120px;
+        top: 4rem;
+        left: -1.5rem;
+    }
+}
+
+.home-section-container, .testimonial {
+    align-content: center;
+    @extend .container;
+    padding: 4rem 0.5rem 4rem 1rem;
+}
+
+
+// Home page sections - end

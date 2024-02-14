@@ -18,7 +18,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
 
-
 <div class="wrapper" id="index-wrapper">
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
@@ -29,11 +28,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 
 			<main class="site-main px-0" id="main">
-
 				<?php
 				$args = array(
                     'post_type' => 'post',       	// Post type
-                    'category_name' => 'xxx',  // Only show Posts with 'homepage' category
+                    'category_name' => 'xxx',  // Only show Posts with 'xxx' category
                     'orderby' => 'date',         	// Order by date
                     'order' => 'ASC',           	// Descending order (newest to oldest)
                     'posts_per_page' => -1,      	// Display all posts
@@ -58,6 +56,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					get_template_part( 'loop-templates/content', 'frontpage' );
 				}
 				?>
+
 
 			</main><!-- #main -->
 
