@@ -1,6 +1,6 @@
 /*!
   * Understrap v1.2.0 (https://understrap.com)
-  * Copyright 2013-2023 The Understrap Authors (https://github.com/understrap/understrap/graphs/contributors)
+  * Copyright 2013-2024 The Understrap Authors (https://github.com/understrap/understrap/graphs/contributors)
   * Licensed under GPL-3.0 (undefined)
   */
 (function (global, factory) {
@@ -6743,5 +6743,29 @@
 	  }
 	})();
 
-	// Add your custom JS here.
-}
+	// scroll transition for navbar
+
+	const navEl = document.querySelector('.navbar');
+	window.addEventListener('scroll', () => {
+	  if (window.scrollY >= 100) {
+	    navEl.classList.add('navbar-scrolled');
+	  } else {
+	    navEl.classList.remove('navbar-scrolled');
+	  }
+	});
+
+	exports.Alert = alert;
+	exports.Button = button;
+	exports.Carousel = carousel;
+	exports.Collapse = collapse;
+	exports.Dropdown = dropdown;
+	exports.Modal = modal;
+	exports.Offcanvas = offcanvas;
+	exports.Popover = popover;
+	exports.Scrollspy = scrollspy;
+	exports.Tab = tab;
+	exports.Toast = toast;
+	exports.Tooltip = tooltip;
+
+}));
+//# sourceMappingURL=child-theme.js.map

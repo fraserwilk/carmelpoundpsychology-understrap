@@ -35,6 +35,7 @@ hr {
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-top: 0;
   margin-bottom: 0.5rem;
+  font-family: "Gloock Regular", serif;
   font-weight: 500;
   line-height: 1.2;
 }
@@ -414,7 +415,7 @@ progress {
   --bs-red: #dc3545;
   --bs-orange: #fd7e14;
   --bs-yellow: #ffc107;
-  --bs-green: #197541;
+  --bs-green: rgb(164, 195, 178);
   --bs-teal: #20c997;
   --bs-cyan: #0dcaf0;
   --bs-black: #000;
@@ -430,17 +431,17 @@ progress {
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
-  --bs-primary: #197541;
+  --bs-primary: rgb(164, 195, 178);
   --bs-secondary: #6c757d;
-  --bs-success: #197541;
+  --bs-success: rgb(164, 195, 178);
   --bs-info: #0dcaf0;
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
-  --bs-primary-rgb: 25, 117, 65;
+  --bs-primary-rgb: 164, 195, 178;
   --bs-secondary-rgb: 108, 117, 125;
-  --bs-success-rgb: 25, 117, 65;
+  --bs-success-rgb: 164, 195, 178;
   --bs-info-rgb: 13, 202, 240;
   --bs-warning-rgb: 255, 193, 7;
   --bs-danger-rgb: 220, 53, 69;
@@ -453,7 +454,7 @@ progress {
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-  --bs-body-font-family: Fira Sans, sans-serif;
+  --bs-body-font-family: DM Sans Regular, sans-serif;
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
@@ -469,8 +470,8 @@ progress {
   --bs-border-radius-xl: 1rem;
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
-  --bs-link-color: #197541;
-  --bs-link-hover-color: #145e34;
+  --bs-link-color: rgb(164, 195, 178);
+  --bs-link-hover-color: #839c8e;
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
 }
@@ -553,13 +554,13 @@ progress {
 
 .table-primary {
   --bs-table-color: #000;
-  --bs-table-bg: #d1e3d9;
-  --bs-table-border-color: #bcccc3;
-  --bs-table-striped-bg: #c7d8ce;
+  --bs-table-bg: #edf3f0;
+  --bs-table-border-color: #d5dbd8;
+  --bs-table-striped-bg: #e1e7e4;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #bcccc3;
+  --bs-table-active-bg: #d5dbd8;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #c1d2c9;
+  --bs-table-hover-bg: #dbe1de;
   --bs-table-hover-color: #000;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -581,13 +582,13 @@ progress {
 
 .table-success {
   --bs-table-color: #000;
-  --bs-table-bg: #d1e3d9;
-  --bs-table-border-color: #bcccc3;
-  --bs-table-striped-bg: #c7d8ce;
+  --bs-table-bg: #edf3f0;
+  --bs-table-border-color: #d5dbd8;
+  --bs-table-striped-bg: #e1e7e4;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #bcccc3;
+  --bs-table-active-bg: #d5dbd8;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #c1d2c9;
+  --bs-table-hover-bg: #dbe1de;
   --bs-table-hover-color: #000;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -854,7 +855,7 @@ progress {
   --bs-red: #dc3545;
   --bs-orange: #fd7e14;
   --bs-yellow: #ffc107;
-  --bs-green: #197541;
+  --bs-green: rgb(164, 195, 178);
   --bs-teal: #20c997;
   --bs-cyan: #0dcaf0;
   --bs-black: #000;
@@ -870,17 +871,17 @@ progress {
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
-  --bs-primary: #197541;
+  --bs-primary: rgb(164, 195, 178);
   --bs-secondary: #6c757d;
-  --bs-success: #197541;
+  --bs-success: rgb(164, 195, 178);
   --bs-info: #0dcaf0;
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
-  --bs-primary-rgb: 25, 117, 65;
+  --bs-primary-rgb: 164, 195, 178;
   --bs-secondary-rgb: 108, 117, 125;
-  --bs-success-rgb: 25, 117, 65;
+  --bs-success-rgb: 164, 195, 178;
   --bs-info-rgb: 13, 202, 240;
   --bs-warning-rgb: 255, 193, 7;
   --bs-danger-rgb: 220, 53, 69;
@@ -893,7 +894,7 @@ progress {
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-  --bs-body-font-family: Fira Sans, sans-serif;
+  --bs-body-font-family: DM Sans Regular, sans-serif;
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
@@ -909,8 +910,8 @@ progress {
   --bs-border-radius-xl: 1rem;
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
-  --bs-link-color: #197541;
-  --bs-link-hover-color: #145e34;
+  --bs-link-color: rgb(164, 195, 178);
+  --bs-link-hover-color: #839c8e;
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
 }
@@ -922,8 +923,8 @@ progress {
 }
 
 .text-bg-primary {
-  color: #fff !important;
-  background-color: RGBA(25, 117, 65, var(--bs-bg-opacity, 1)) !important;
+  color: #000 !important;
+  background-color: RGBA(164, 195, 178, var(--bs-bg-opacity, 1)) !important;
 }
 
 .text-bg-secondary {
@@ -932,8 +933,8 @@ progress {
 }
 
 .text-bg-success {
-  color: #fff !important;
-  background-color: RGBA(25, 117, 65, var(--bs-bg-opacity, 1)) !important;
+  color: #000 !important;
+  background-color: RGBA(164, 195, 178, var(--bs-bg-opacity, 1)) !important;
 }
 
 .text-bg-info {
@@ -962,10 +963,10 @@ progress {
 }
 
 .link-primary {
-  color: #197541 !important;
+  color: rgb(164, 195, 178) !important;
 }
 .link-primary:hover, .link-primary:focus {
-  color: #145e34 !important;
+  color: #b6cfc1 !important;
 }
 
 .link-secondary {
@@ -976,10 +977,10 @@ progress {
 }
 
 .link-success {
-  color: #197541 !important;
+  color: rgb(164, 195, 178) !important;
 }
 .link-success:hover, .link-success:focus {
-  color: #145e34 !important;
+  color: #b6cfc1 !important;
 }
 
 .link-info {
@@ -5191,16 +5192,16 @@ progress {
 
 .has-green-color,
 .has-green-color:visited {
-  color: #197541;
+  color: rgb(164, 195, 178);
 }
 
 .has-green-background-color {
-  background-color: #197541;
-  border-color: #197541;
+  background-color: rgb(164, 195, 178);
+  border-color: rgb(164, 195, 178);
 }
 
 .wp-block-button:hover .wp-block-button__link.has-white-background-color.has-green-color {
-  color: #197541;
+  color: rgb(164, 195, 178);
 }
 
 .has-teal-color,
@@ -5289,16 +5290,16 @@ progress {
 
 .has-primary-color,
 .has-primary-color:visited {
-  color: #197541;
+  color: rgb(164, 195, 178);
 }
 
 .has-primary-background-color {
-  background-color: #197541;
-  border-color: #197541;
+  background-color: rgb(164, 195, 178);
+  border-color: rgb(164, 195, 178);
 }
 
 .wp-block-button:hover .wp-block-button__link.has-white-background-color.has-primary-color {
-  color: #197541;
+  color: rgb(164, 195, 178);
 }
 
 .has-secondary-color,
@@ -5317,16 +5318,16 @@ progress {
 
 .has-success-color,
 .has-success-color:visited {
-  color: #197541;
+  color: rgb(164, 195, 178);
 }
 
 .has-success-background-color {
-  background-color: #197541;
-  border-color: #197541;
+  background-color: rgb(164, 195, 178);
+  border-color: rgb(164, 195, 178);
 }
 
 .wp-block-button:hover .wp-block-button__link.has-white-background-color.has-success-color {
-  color: #197541;
+  color: rgb(164, 195, 178);
 }
 
 .has-info-color,

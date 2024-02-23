@@ -136,3 +136,26 @@ function site_name_shortcode( ) {
     return $site_title;
 }
 add_shortcode( 'site_name', 'site_name_shortcode' );
+
+
+// ACF Block rego
+add_action( 'init', 'register_acf_blocks' );
+
+function register_acf_blocks() {
+	 /**
+     * We register our block's with WordPress's handy
+     * register_block_type();
+     *
+     * @link https://developer.wordpress.org/reference/functions/register_block_type/
+     */
+	register_block_type( __DIR__ . '/blocks/testimonial-cpp' );
+}
+
+// Used to add class to custom logo
+add_filter( 'wp_get_attachment_image_attributes', function( $attr )
+{
+    if( isset( $attr['class'] )  && 'custom-logo' === $attr['class'] )
+        $attr['class'] = 'custom-logo img-logo';
+
+    return $attr;
+} );

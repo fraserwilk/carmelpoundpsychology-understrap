@@ -14,23 +14,10 @@ defined( 'ABSPATH' ) || exit;
 	<div class="entry-content">
 		
         
-				<?php
-				// ACF - Flexible Content fields.
-				$sections = get_field( 'cpp_sections' );
-				
-				if ( $sections ) :
-					// wrap every sub column in a row
-					echo '<div class="row container-fluid p-0">';
-					foreach ( $sections as $section ) :
-						$template = str_replace( '_', '-', $section['acf_fc_layout'] );
-						
-						get_template_part( 'flexible-content/cpp_sections/' . $template , '', $section );
-						
-					endforeach;
-					echo '</div>';
-				endif;
-			
-				?>
+	<?php
+                        the_content();
+                        understrap_link_pages();
+                        ?>
 
 	</div><!-- .entry-content -->
 
