@@ -1,0 +1,45 @@
+.footer-widget {
+    padding-top: 28px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#menu-footer-menu {
+    list-style-type: none;
+}
+
+#menu-footer-menu li {
+    display: inline-block;
+    margin-right: 0px; /* Adjust spacing between menu items */
+}
+
+#menu-footer-menu li:last-child {
+    margin-right: 0; /* Remove margin from the last menu item */
+}
+
+/* Additional styling for menu links */
+#menu-footer-menu a {
+    text-decoration: none;
+    color: $dark; /* Adjust the color as needed */
+    padding: 10px 15px; /* Adjust padding as needed */
+    // border: $dark solid 1px;
+    border-radius: 5px; /* Add rounded corners to menu items */
+    // background-color: #ddd; /* Add background color to menu items */
+    // box-shadow: 0 3px 10px (rgba(0,0,0, 0.15));
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    #menu-footer-menu a {
+        color: $dark; /* Adjust the color as needed */
+        padding: 4px 6px; /* Adjust padding as needed */
+        border: none;
+        // border-radius: 5px; /* Add rounded corners to menu items */
+        background-color: transparent; /* Add background color to menu items */
+    }
+}
+
+#menu-footer-menu a:hover {
+    background-color: $primary; /* Change background color on hover */
+}
+

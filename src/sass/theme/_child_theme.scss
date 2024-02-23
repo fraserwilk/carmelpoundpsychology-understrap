@@ -21,15 +21,18 @@
     scroll-behavior: smooth;
 }
 
-
+.img-logo {
+    border-radius: unset;
+}
 
 // Scroll progress animation
 .scroll-watcher {
     height: 6px;
     position: fixed;
+    // top: 112px;
     top: 80px;
     z-index: 1000;
-    background-color: $primary;
+    background-color: $secondary;
     width: 100%;
     scale: 0 1;
     transform-origin: left;
@@ -76,12 +79,29 @@ h3 {
 font-size: var(--size-step-2);
 }
 
-p, ul {
+p {
     max-width: 60ch;
+}
+
+img {
+    border-radius: 24px;
+    
 }
 
 
 // Navigation styles
+// navbar transition
+.navbar {
+    transition: all 0.5s;
+    // top:32px; // for admin bar fix
+}
+
+.navbar-scrolled {
+    background-color: $primary;
+    box-shadow: 0 3px 10px (rgba(0,0,0, 0.15));
+}
+// navbar transition - end
+
 .nav .navbar-nav li a{
     color: #FFF!important;
 }
@@ -114,16 +134,28 @@ a.menu:after, .dropdown-toggle:after {
     .icon svg{
         fill: $primary;
     }
+
+    .title {
+        @extend h3;
+        margin-top: 8px;
+        text-wrap:pretty;
+    }
+
+    .content {
+        @extend .card-text;
+        }
     
     .box {
+        justify-content: space-between;
         flex: 0 1 auto;
         @extend .card;
         @extend .shadow;
         border: $dark solid 1px;
         padding: $spacer * 1.5;
+        border-radius: 24px;
         
-        .wp-block-heading {
-            margin-top: 8px;
+        .title {
+            margin-top: 1px;
             text-wrap:pretty;
         }
 
@@ -131,59 +163,13 @@ a.menu:after, .dropdown-toggle:after {
             width: 100%;
             margin-top: 8px;
         }
+
+        .button {
+            width: 100%;
+            margin-top: 8px;
+        }
+
     }
 }
 // Service cards - end
 
-// Home page sections
-.home-section-wrapper{
-    padding: 0px 0;
-}
-
-.home-section-wrapper.bg-color {
-    background-color: $gray-400;
-}
-
-.testimonial-header {
-    @extend .container;
-    color: $light;
-    padding-top: 3rem;
-}
-
-.home-section-wrapper .testimonial {
-    color: $light;
-    @extend .container;
-
-    .testimonial-name {
-        text-transform: uppercase;
-        font-style: italic;
-        color: $light;
-    }
-
-    .testimonial-line {
-        color: $gray-300;
-        width: 95%;
-    }
-
-    &:before, &:after {
-        font-family: $headings-font-family;
-        color: $light;
-        position: relative;
-      }
-
-    &:before {
-        content: '“';
-        font-size: 120px;
-        top: 4rem;
-        left: -1.5rem;
-    }
-}
-
-.home-section-container, .testimonial {
-    align-content: center;
-    @extend .container;
-    padding: 4rem 0.5rem 4rem 1rem;
-}
-
-
-// Home page sections - end

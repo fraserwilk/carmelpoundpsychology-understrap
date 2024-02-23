@@ -136,8 +136,10 @@ $container = get_theme_mod( 'understrap_container_type' );
                             <?php endif; ?>
 
 
+                            
+                            <?php if ( get_row_layout() == 'textarea_with_image' ) : ?>
                             <!-- ACF Text Area with Image Section -->
-                            <?php if ( get_row_layout() == 'textarea_with_image' ) :
+                            <?php 
                                 $title = get_sub_field( 'title' );
                                 $content = get_sub_field( 'content' );
                                 $image = wp_get_attachment_image( get_sub_field( 'image' ), 'full' );

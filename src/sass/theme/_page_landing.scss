@@ -5,15 +5,87 @@
     .hero-image {
         min-width: 100vw;
         object-fit: cover;
-        height: 50vh;
+        height: 90vh;
+        border-radius: 0px;
     }
     
     .hero-overlay {
-        @extend .h1;
         color: $light;
+        font-family: $headings-font-family;
+        font-size: var(--size-step-5);  // varies h1 size according to rem & viewport size (may extend to other headings)
+        letter-spacing: 2px;
         position: absolute;
-        top: 5ch;
-        left: 8rem;
-        width: 20ch;
+        top: 60vh;
+        left: clamp(2rem, 4rem, 6rem);
+        width: clamp(20rem, 50vw, 80rem);
     }
 }
+
+// Home page sections
+.home-section-wrapper {
+    @extend .container-fluid;
+    padding: 10% 10%;
+}
+
+.home-section-wrapper.bg-color {
+    background-color: $gray-400;
+}
+
+.testimonial-header {
+    @extend .container;
+    color: $light;
+    padding-top: 3rem;
+}
+
+.home-section-wrapper .testimonial {
+    color: $light;
+    @extend .container-fluid;
+
+    .testimonial-name {
+        text-transform: uppercase;
+        font-style: italic;
+        color: $light;
+    }
+
+    .testimonial-line {
+        color: $gray-300;
+        width: 95%;
+    }
+
+    &:before, &:after {
+        font-family: $headings-font-family;
+        color: $light;
+        position: relative;
+      }
+
+/*     &:before {
+        content: '“';
+        font-size: 120px;
+        top: 4rem;
+        left: -1.5rem;
+    } */
+}
+
+.home-section-container, .testimonial {
+    align-content: center;
+    @extend .container;
+    padding: 4rem 0.5rem 4rem 1rem;
+
+    .subtitle {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 0.8rem;
+    }
+
+    h2 {
+        font-size: var(--size-step-3);
+        padding-top: 0.5em;
+    }
+
+    .title {
+        @extend h3;
+    }
+}
+
+
+// Home page sections - end
