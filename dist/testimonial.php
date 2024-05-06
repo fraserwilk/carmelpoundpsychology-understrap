@@ -40,13 +40,13 @@ $container = get_theme_mod( 'understrap_container_type' );
                         <div class="col-md-5">
                             <h1 class="display-3 fw-bold text-primary"><?php echo $title; ?></h1>
                             <div class="fs-3 py-3"><?php echo $subtitle; ?></div>
-                            <div class="mt-2"><a href="<?php echo esc_url($buttonlink); ?>"><button class="btn btn-primary text-uppercase" type="submit"><?php echo $buttonlabel; ?></button></a></div>
+                            <div class="mt-2"><a href="<?php echo esc_url($buttonlink); ?>"><button class="btn btn-primary text-uppercase" type="submit"><?php echo wp_kses_post($buttonlabel); ?></button></a></div>
                         </div>
                     <?php elseif ( $side === 'right' ) : ?>
                         <div class="col-md-5 offset-md-2">
                             <h1 class="display-3 fw-bold text-primary"><?php echo $title; ?></h1>
                             <div class="fs-3 py-3"><?php echo $subtitle; ?></div>
-                            <div class="mt-2"><a href="<?php echo esc_url($buttonlink); ?>"><button class="btn btn-primary text-uppercase" type="submit"><?php echo $buttonlabel; ?></button></a></div>
+                            <div class="mt-2"><a href="<?php echo esc_url($buttonlink); ?>"><button class="btn btn-primary text-uppercase" type="submit"><?php echo wp_kses_post($buttonlabel); ?></button></a></div>
                         </div>
 
                         <div class="col-md-4 pt-5">

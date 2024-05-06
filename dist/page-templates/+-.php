@@ -53,11 +53,11 @@ if ( is_page_template( 'page-templates/no-title.php' ) ) {
                                 </div>
                             <?php endif; ?>
 
-                        <?php elseif ( get_row_layout() == 'textarea_with_image' ) : ?>
-                            <?php
-                            $title = get_sub_field( 'title' );
-                            $text_content = get_sub_field( 'content' );
-                            $text_image = get_sub_field( 'image' );
+                            <?php elseif ( get_row_layout() == 'textarea_with_image' ) : ?>
+                                <?php
+                                $title = get_sub_field( 'title' );
+                                $text_content = get_sub_field( 'content' );
+                                $text_image = get_sub_field( 'image' );
                             ?>
 
                             <div class="home-section-wrapper">
@@ -67,7 +67,8 @@ if ( is_page_template( 'page-templates/no-title.php' ) ) {
                                             <h2><?php echo esc_html( $title ); ?></h2>
                                             <?php echo apply_filters( 'the_content', $text_content ); ?>
                                             <?php if ( get_sub_field( 'button_link' ) ) : ?>
-                                                <a href="<?php the_sub_field( 'button_link' ); ?>" class="btn btn-primary btn-lg" type="button"><?php the_sub_field( 'button_label' ); ?></a>
+                                                <a href="<?php echo esc_url( get_sub_field( 'button_link' ) ); ?>" class="btn btn-primary btn-lg" type="button"><?php echo wp_kses_post( get_sub_field( 'button_label' ) ); ?></a>
+
                                             <?php endif; ?>
                                         </div>
                                         <div class="col-md-6">
@@ -86,7 +87,7 @@ if ( is_page_template( 'page-templates/no-title.php' ) ) {
                             $content = get_sub_field( 'content' );
                             ?>
 
-                            <div class="home-section-wrapper" style="background-color:<?php the_sub_field( 'background_color' ); ?>">
+                            <div class="home-section-wrapper" style="background-color:<?php wp_kses_post(get_sub_field( 'background_color' )); ?>">
                                 <div class="home-section-container">
                                     <div class="row">
                                         <div class="col-md-6">
@@ -120,9 +121,10 @@ if ( is_page_template( 'page-templates/no-title.php' ) ) {
                                                         <div class="title"><?php echo esc_html( get_sub_field( 'title' ) ); ?></div>
                                                         <div class="content"><?php echo apply_filters( 'the_content', get_sub_field( 'content' ) ); ?></div>
                                                         <div class="button">
-                                                            <?php if ( get_sub_field( 'button_link' ) ) : ?>
-                                                                <a href="<?php the_sub_field( 'button_link' ); ?>" class="btn btn-outline-primary btn-lg w-100" type="button"><?php the_sub_field( 'button_label' ); ?></a>
-                                                            <?php endif; ?>
+                                                        <?php if ( get_sub_field( 'button_link' ) ) : ?>
+                                                            <a href="<?php echo wp_kses_post(get_sub_field( 'button_link' )); ?>" class="btn btn-outline-primary btn-lg w-100" type="button"><?php echo wp_kses_post( get_sub_field( 'button_label' ) ); ?></a>
+                                                        <?php endif; ?>
+
                                                         </div>
                                                     </div>
                                                 </div>

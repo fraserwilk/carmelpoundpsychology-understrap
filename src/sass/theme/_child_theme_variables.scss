@@ -48,10 +48,10 @@ $dark:          $gray-900 !default;
 // scss-docs-end theme-color-variables
 
 
+$font-family-base: 'Fira Sans', sans-serif;
 
-
-$font-family-base: 'DM Sans Regular', sans-serif;
-$headings-font-family: 'Gloock Regular', serif;
+$headings-font-family: 'Fira Sans', sans-serif;
+$headings-font-weight:        600 !default;
 
 
 $spacer: 1rem;
@@ -72,4 +72,6 @@ $font-size-sm:                $font-size-base * .875;
 $font-size-lg:                $font-size-base * 1.25;
 
 // Card - equal heights by default
-$card-height: 100% 
+$card-height: 100%;
+
+

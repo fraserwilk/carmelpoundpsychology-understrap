@@ -1,35 +1,73 @@
 // Hero classes
 
-.hero-section {
+.hero-image {
+    min-width: 100vw;
+    object-fit: cover;
+    height: 100vh;
+    border-radius: 0px;
+}
 
-    .hero-image {
-        min-width: 100vw;
-        object-fit: cover;
-        height: 90vh;
-        border-radius: 0px;
-    }
-    
-    .hero-overlay {
-        color: $light;
-        font-family: $headings-font-family;
-        font-size: var(--size-step-5);  // varies h1 size according to rem & viewport size (may extend to other headings)
-        letter-spacing: 2px;
-        position: absolute;
-        top: 60vh;
-        left: clamp(2rem, 4rem, 6rem);
-        width: clamp(20rem, 50vw, 80rem);
-    }
+.hero-overlay {
+    color: $light;
+    @extend h1;
+    // font-size: var(--size-step-5);  // varies h1 size according to rem & viewport size (may extend to other headings)
+    letter-spacing: 2px;
+    position: absolute;
+    top: 50vh;
+    left: 3rem;
+    width: clamp(20rem, 50vw, 80rem);
 }
 
 // Home page sections
 .home-section-wrapper {
-    @extend .container-fluid;
-    padding: 10% 10%;
+    width: 90%;
+    min-height: 70vh;
+    padding: 0px;
+    align-content: center;
+
+    .sub-title {
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    .title {
+        padding-top: 0;
+        font-size: 3rem;
+        text-wrap: balance;
+        width: 12ch;
+    }
+
+/*     .content {
+        font-size: 1.3rem;
+    } */
 }
 
 .home-section-wrapper.bg-color {
     background-color: $gray-400;
 }
+
+
+// Scroll sectionfp animation
+@media (prefers-reduced-motion: no-preference) {
+    .home-section-wrapper {
+        opacity: 0;
+        animation: fade-in linear forwards;
+        animation-timeline: view();
+        animation-range: entry 100px;
+    }
+
+    @keyframes fade-in {
+        to {opacity: 1;}
+    }
+}
+// Scroll sectionfp animation - end
+
+
+.wp-block-image.img {
+    border-radius: min(1.5rem, 2vw);
+}
+
+
 
 .testimonial-header {
     @extend .container;
@@ -37,39 +75,9 @@
     padding-top: 3rem;
 }
 
-.home-section-wrapper .testimonial {
-    color: $light;
-    @extend .container-fluid;
-
-    .testimonial-name {
-        text-transform: uppercase;
-        font-style: italic;
-        color: $light;
-    }
-
-    .testimonial-line {
-        color: $gray-300;
-        width: 95%;
-    }
-
-    &:before, &:after {
-        font-family: $headings-font-family;
-        color: $light;
-        position: relative;
-      }
-
-/*     &:before {
-        content: '“';
-        font-size: 120px;
-        top: 4rem;
-        left: -1.5rem;
-    } */
-}
-
-.home-section-container, .testimonial {
-    align-content: center;
-    @extend .container;
-    padding: 4rem 0.5rem 4rem 1rem;
+.home-section-container {
+    // min-height: 90vh;
+    padding: 60px 10px;
 
     .subtitle {
         text-transform: uppercase;

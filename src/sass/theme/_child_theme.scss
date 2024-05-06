@@ -15,7 +15,7 @@
     --space-m-xl: clamp(1.5rem, 0.9915rem + 2.5424vw, 3.375rem);
     --space-mega: clamp(6rem, 4.5763rem + 7.1186vw, 11.25rem);
     --gutter: var(--space-s);
-  }
+}
 
   html {
     scroll-behavior: smooth;
@@ -47,21 +47,6 @@
 
 
 
-// Scroll sectionfp animation
-@media (prefers-reduced-motion: no-preference) {
-    .home-section-wrapper {
-        scale: .8; opacity: 0;
-        animation: fade-in linear forwards;
-        animation-timeline: view();
-        animation-range: entry 100px;
-    }
-
-    @keyframes fade-in {
-        to {scale: 1; opacity: 1;}
-    }
-}
-// Scroll sectionfp animation - end
-
 .wrapper {
     padding-top: 0px;
 }
@@ -83,48 +68,15 @@ p {
     max-width: 60ch;
 }
 
-img {
+img[class*='wp-image-'] {
     border-radius: 24px;
-    
+}
+
+.wp-block-cover img {
+    border-radius: 0px;
 }
 
 
-// Navigation styles
-// navbar transition
-.navbar {
-    transition: all 0.5s;
-    // top:32px; // for admin bar fix
-}
-
-.navbar-scrolled {
-    background-color: $primary;
-    box-shadow: 0 3px 10px (rgba(0,0,0, 0.15));
-}
-// navbar transition - end
-
-.nav .navbar-nav li a{
-    color: #FFF!important;
-}
-
-.navbar-dark .navbar-nav .nav-link {
-    color: #FFF;
-}
-
-.navbar-toggler-icon {
-    color: #FFF!important;
-}
-
-
-ul.navbar-nav li.dropdown:hover ul.dropdown-menu {
-    display: block; 
-    margin: 0;
-}
-
-a.menu:after, .dropdown-toggle:after {
-  content: "";
-}
-
-// end Navigation styles
 
 // Service cards
 .servicebox {
@@ -173,3 +125,6 @@ a.menu:after, .dropdown-toggle:after {
 }
 // Service cards - end
 
+.full-height {
+    min-height: 80vh;
+}

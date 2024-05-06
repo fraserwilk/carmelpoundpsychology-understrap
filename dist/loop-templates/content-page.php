@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 			echo '<div class="container">';
 		}
 		else {
-		echo '<div class="container" style="padding-top: var(--space-mega);">';
+		echo '<div class="container full-height" style="padding-top: var(--space-mega);">';
 		}
 		?>
 

@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;300;400;600;700&display=swap');
+
+// @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Gloock&display=swap');   // DM Sans, Gloock - Google font
+
+
 @import "theme/child_theme_variables";                   // <------- Add your variables into this file. Also add variables to overwrite Bootstrap variables here
 @import "theme/child_theme_reset";                  // <----------- https://piccalil.li/blog/a-more-modern-css-reset/
-@import "theme/testimonial"; 
-@import "theme/footer"; 
-@import "theme/page_landing";       // custom styles for landing page template
+   // custom styles for landing page template
 @import "assets/bootstrap5/bootstrap";                             // <------- Loads Bootstrap5
 @import "assets/understrap/theme/understrap";  // <------- Loads the Understrap defaults. Just a few classes to incorporate BS in WP
 // @import "assets/understrap/theme/woocommerce"; // <------- Loads WooCommerce style fixes. Comment out if you aren't using WooCommerce
@@ -17,4 +20,8 @@
 @import "assets/understrap/theme/blocks";           // <-------- This adds Bootstrap styles to blocks.
 
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Gloock&display=swap');   // DM Sans, Gloock - Google font
+
+@import "theme/testimonial"; 
+@import "theme/footer"; 
+@import "theme/page_landing";
+@import "theme/header";

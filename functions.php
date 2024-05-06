@@ -129,7 +129,7 @@ function current_date_shortcode( ) {
 add_shortcode( 'current_date', 'current_date_shortcode' );
 
 // Add shortcode to insert Site Name in any widget
-// Just add: [site_name] to display the current year.
+// Just add: [site_name] to display the site name.
 function site_name_shortcode( ) {
     $site_title = get_bloginfo( 'name');
 
@@ -148,7 +148,7 @@ function register_acf_blocks() {
      *
      * @link https://developer.wordpress.org/reference/functions/register_block_type/
      */
-	register_block_type( __DIR__ . '/blocks/testimonial-cpp' );
+	register_block_type( __DIR__ . '/blocks/testimonial' );
 }
 
 // Used to add class to custom logo
