@@ -2,7 +2,11 @@
     padding-top: 28px;
     display: flex;
     width: 100%;
-    justify-content: center;
+    justify-content: space-around;
+
+    .wp-block-group {
+        @extend .container;
+    }
 }
 
 #wrapper-footer-full {
@@ -37,8 +41,6 @@ ul#menu-footer-menu {
 #menu-footer-menu li:last-child {
     margin-bottom: 0px; /* Remove margin from the last menu item */
 }
-
-
 
 @media (min-width: 320px) and (max-width: 480px) {
     #menu-footer-menu a {

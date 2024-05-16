@@ -1,13 +1,13 @@
 // Hero classes
 
-.hero-image {
+/* .hero-image {
     min-width: 100vw;
     object-fit: cover;
     height: 100vh;
     border-radius: 0px;
-}
+} */
 
-.hero-overlay {
+/* .hero-overlay {
     color: $light;
     @extend h1;
     // font-size: var(--size-step-5);  // varies h1 size according to rem & viewport size (may extend to other headings)
@@ -16,9 +16,143 @@
     top: 50vh;
     left: 3rem;
     width: clamp(20rem, 50vw, 80rem);
+} */
+
+.hero-section .wp-block-heading {
+    font-size: 6rem;
+    font-weight: 400;
+    color: $light;
+    text-align:center;
+    line-height: 1em;
+    padding: 0px 40px;
+}
+
+.hero-section {
+    position: relative;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust the overlay color and opacity */
+    z-index: 1;
+}
+
+.hero-section .wp-block-cover img {
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -o-filter: blur(1px);
+    -ms-filter: blur(1px);
+    filter: blur(1px);
+
 }
 
 // Home page sections
+
+.container .wp-block-group {
+    @extend .container;
+    padding: 5% 20px;
+
+    a {
+        text-decoration: none;
+        color: $primary;
+
+        &:hover {
+            color: $secondary;
+        }
+    }
+}
+
+.wp-block-query {
+    @extend .container;
+    padding: 5% 0;
+
+    a {
+        text-decoration: none;
+        color: $primary;
+
+        &:hover {
+            color: $secondary;
+        }
+    }
+    ul {
+        li {
+            @extend .card;
+            background: green;
+
+            .wp-block-group {
+                border: solid 2px $primary;
+            }
+        }
+    }
+}
+
+// for [subset_of_pages] shortcode
+.page-subset {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 30px;
+    padding: 1em;
+}
+
+.page-subset > .page-item {
+    flex: 1 1 calc(33.333% - 30px); /* Ensure 3 items per row, accounting for gap */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    // border: solid 1px #ccc; /* Optional: Add some styling to the page items */
+    // padding: 20px; /* Optional: Add some padding to the page items */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: $light;
+
+    p.title {
+        padding: 0 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+    
+    .page-content {
+        font-size: 0.8rem;
+        padding: 0 20px;
+    }
+
+    .featured-image {
+        width: 100%;
+        margin-bottom: 10px; /* Space below the featured image */
+        border-bottom: 4px solid $primary;
+    }
+    
+    .featured-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .fa:not(.read-more) {
+        font-size: 2.5rem;
+        padding: 10px 20px;
+    }
+    i {
+        display: flex;
+        height: 70px;
+    }
+
+    .read-more-text {
+        font-family: $font-family-base;
+        font-size: 1rem;
+        display: inline-block;
+        align-self:center;
+        padding-left: 20px;
+    }
+}
+
+
 .home-section-wrapper {
     width: 90%;
     min-height: 70vh;
@@ -46,6 +180,9 @@
     background-color: $gray-400;
 }
 
+.wp-block-post-date {
+    display: none;
+}
 
 // Scroll sectionfp animation
 @media (prefers-reduced-motion: no-preference) {
@@ -70,12 +207,11 @@
 
 
 .testimonial-header {
-    @extend .container;
     color: $light;
     padding-top: 3rem;
 }
 
-.home-section-container {
+/* .home-section-container {
     // min-height: 90vh;
     padding: 60px 10px;
 
@@ -93,7 +229,7 @@
     .title {
         @extend h3;
     }
-}
+} */
 
 
 // Home page sections - end

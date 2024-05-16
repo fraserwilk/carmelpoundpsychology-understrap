@@ -9,7 +9,7 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+<div <?php post_class(); ?> >
 
 	
 	<div class="entry-content">
@@ -32,4 +32,4 @@ defined( 'ABSPATH' ) || exit;
 
 	</footer><!-- .entry-footer -->
 
-</article><!-- #post-## -->
+</div><!-- #post-## -->

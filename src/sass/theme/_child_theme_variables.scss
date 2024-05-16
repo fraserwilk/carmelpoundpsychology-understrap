@@ -7,6 +7,8 @@ $green: rgb(164,195,178,100); // Carmel's green.
 
 $primary: $green;  // Primary brand color.
 
+$link-color: $primary;
+
 // scss-docs-start gray-color-variables
 $white:    #fff !default;
 $gray-100: #f8f9fa !default;
@@ -47,10 +49,17 @@ $light:         $gray-100 !default;
 $dark:          $gray-900 !default;
 // scss-docs-end theme-color-variables
 
+$font-weight-lighter:         lighter !default;
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-semibold:        600 !default;
+$font-weight-bold:            700 !default;
+$font-weight-bolder:          bolder !default;
 
-$font-family-base: 'Fira Sans', sans-serif;
+$font-family-base: 'Poppins', sans-serif;
+$font-weight-base:            $font-weight-light !default;
 
-$headings-font-family: 'Fira Sans', sans-serif;
+$headings-font-family: 'Poppins', sans-serif;
 $headings-font-weight:        600 !default;
 
 
@@ -75,3 +84,16 @@ $font-size-lg:                $font-size-base * 1.25;
 $card-height: 100%;
 
 
+.wp-block-buttons .wp-block-button:not(.is-style-outline) .wp-block-button__link {
+  background-color: $primary;
+  color: $light;
+  border-radius: 10px;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: $light;
+    color: $primary;
+    border-color: #495057;
+  }
+}

@@ -15,7 +15,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
 
-<!-- Now using Footer widget  -->
+<!-- using footer widget  -->
 
 <?php // Closing div#page from header.php. ?>
 </div><!-- #page -->

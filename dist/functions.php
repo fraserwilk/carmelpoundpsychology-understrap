@@ -159,3 +159,63 @@ add_filter( 'wp_get_attachment_image_attributes', function( $attr )
 
     return $attr;
 } );
+
+/* // adds excerpts ability to pages
+add_post_type_support( 'page', 'excerpt' );
+
+// Changing excerpt more
+function new_excerpt_more($more) {
+	global $post;
+	remove_filter('excerpt_more', 'new_excerpt_more'); 
+	return ' <a class="read_more" href="'. get_permalink($post->ID) . '">' . ' do whatever you want to update' . '</a>';
+  }
+  add_filter('excerpt_more','new_excerpt_more',11); */
+
+
+remove_filter('get_the_excerpt', 'wp_trim_excerpt');
+
+// builds a list of pages and displays with a shortcode
+ function display_subset_of_pages() {
+    // Define the query arguments
+    $args = array(
+        'post_type' => 'page',
+        'posts_per_page' => 6, // Number of pages to display
+        'orderby' => 'date',   // Order by date
+        'order' => 'DESC',     // Order descending
+        'post__in' => array(187, 195, 296, 352, 368) // Array of specific page IDs to include
+    );
+
+    // Custom query
+    $query = new WP_Query($args);
+
+    // Check if the query has pages
+    if ($query->have_posts()) {
+        $output = '<div class="page-subset">';
+        
+        // Loop through the pages
+        while ($query->have_posts()) {
+            $query->the_post();
+            
+            $output .= '<div class="page-item">';
+			if (has_post_thumbnail()) {
+                $output .= '<div class="featured-image">' . get_the_post_thumbnail(get_the_ID(), 'medium') . '</div>';
+            }
+            $output .= '<p class="title">' . get_the_title() . '</p>';
+            $output .= '<div class="page-content">' . get_the_excerpt() . '</div>';
+            $output .= '<a href="' . get_permalink() . '" class="read-more"><i class="fa fa-arrow-circle-right"><span class="read-more-text">Read more</span></i></a>';
+            $output .= '</div>';
+        }
+
+        $output .= '</div>';
+        
+        // Restore original Post Data
+        wp_reset_postdata();
+    } else {
+        $output = '<p>No pages found.</p>';
+    }
+
+    return $output;
+}
+
+// Register the shortcode
+add_shortcode('subset_of_pages', 'display_subset_of_pages');

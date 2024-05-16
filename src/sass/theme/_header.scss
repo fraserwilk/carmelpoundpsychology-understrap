@@ -1,4 +1,5 @@
 // Navigation styles
+
 // navbar transition
 .navbar {
     transition: all 0.5s;
@@ -11,31 +12,32 @@
 }
 // navbar transition - end
 
-.nav .navbar-nav li a{
-    color: #FFF!important;
-}
+#main-menu {
+    padding-top: 30px;
+    gap: 2em;
+        li {
+            
+            a {
+                color: $dark;
+                font-size: 16px;
+                font-weight: 400;
+            }
+            &.current-menu-item {
+                a {
+                color: $primary;
+                }
+            }
+        }
+    }
 
-.navbar-dark .navbar-nav .nav-link {
-    color: #FFF;
-}
-
-.nav-link {
-    color: $dark;
-    font-size: var(--size-step-1);
-}
-
-.navbar-toggler-icon {
-    color: #FFF!important;
-}
-
-
-ul.navbar-nav li.dropdown:hover ul.dropdown-menu {
+li.dropdown:hover ul.dropdown-menu {
     display: block; 
     margin: 0;
 }
 
-a.menu:after, .dropdown-toggle:after {
-  content: "";
+//for mobile
+#main-nav {
+    padding-top: 40px;
 }
 
 // end Navigation styles

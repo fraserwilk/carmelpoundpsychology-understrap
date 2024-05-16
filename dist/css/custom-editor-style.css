@@ -1,4 +1,15 @@
 @charset "UTF-8";
+.wp-block-buttons .wp-block-button:not(.is-style-outline) .wp-block-button__link {
+  background-color: rgb(164, 195, 178);
+  color: #f8f9fa;
+  border-radius: 10px;
+}
+.wp-block-buttons .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover, .wp-block-buttons .wp-block-button:not(.is-style-outline) .wp-block-button__link:active, .wp-block-buttons .wp-block-button:not(.is-style-outline) .wp-block-button__link:focus {
+  background: #f8f9fa;
+  color: rgb(164, 195, 178);
+  border-color: #495057;
+}
+
 *,
 *::before,
 *::after {
@@ -35,7 +46,7 @@ hr {
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  font-family: "Fira Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
   line-height: 1.2;
 }
@@ -454,9 +465,9 @@ progress {
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-  --bs-body-font-family: Fira Sans, sans-serif;
+  --bs-body-font-family: Poppins, sans-serif;
   --bs-body-font-size: 1rem;
-  --bs-body-font-weight: 400;
+  --bs-body-font-weight: 300;
   --bs-body-line-height: 1.5;
   --bs-body-color: #212529;
   --bs-body-bg: #fff;
@@ -894,9 +905,9 @@ progress {
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-  --bs-body-font-family: Fira Sans, sans-serif;
+  --bs-body-font-family: Poppins, sans-serif;
   --bs-body-font-size: 1rem;
-  --bs-body-font-weight: 400;
+  --bs-body-font-weight: 300;
   --bs-body-line-height: 1.5;
   --bs-body-color: #212529;
   --bs-body-bg: #fff;

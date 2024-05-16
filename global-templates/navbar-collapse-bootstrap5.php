@@ -12,7 +12,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 ?>
 
-<nav id="main-nav" class="navbar navbar-expand-md fixed-top bg-primary pt-5" aria-labelledby="main-nav-label">
+<nav id="main-nav" class="navbar navbar-expand-md fixed-top bg-light" aria-labelledby="main-nav-label">
 
 	<h2 id="main-nav-label" class="screen-reader-text">
 		<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>
@@ -52,7 +52,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					'theme_location'  => 'primary',
 					'container_class' => 'collapse navbar-collapse',
 					'container_id'    => 'navbarNavDropdown',
-					'menu_class'      => 'navbar-nav ms-auto text-uppercase text-dark text-end',
+					'menu_class'      => 'navbar-nav ms-auto text-uppercase text-end',
 					'fallback_cb'     => '',
 					'menu_id'         => 'main-menu',
 					'depth'           => 2,

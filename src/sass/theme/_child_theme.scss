@@ -1,4 +1,4 @@
-:root {
+/* :root {
     --custom-bg-color: $primary;
     --size-step-0: clamp(1rem, 0.9661rem + 0.1695vw, 1.125rem);
     --size-step-1: clamp(1.125rem, 1.0243rem + 0.5034vw, 1.4963rem);
@@ -15,9 +15,13 @@
     --space-m-xl: clamp(1.5rem, 0.9915rem + 2.5424vw, 3.375rem);
     --space-mega: clamp(6rem, 4.5763rem + 7.1186vw, 11.25rem);
     --gutter: var(--space-s);
+} */
+
+:root {
+    font-size: calc(1rem + 0.25vw);
 }
 
-  html {
+html {
     scroll-behavior: smooth;
 }
 
@@ -51,22 +55,6 @@
     padding-top: 0px;
 }
 
-h1 {
-    font-size: var(--size-step-5);  // varies h1 size according to rem & viewport size (may extend to other headings)
-    letter-spacing: 2px;
-}
-
-h2 {
-    font-size: var(--size-step-4);
-  }
-  
-h3 {
-font-size: var(--size-step-2);
-}
-
-p {
-    max-width: 60ch;
-}
 
 img[class*='wp-image-'] {
     border-radius: 24px;
