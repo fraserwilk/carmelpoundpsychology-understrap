@@ -16,18 +16,17 @@ defined( 'ABSPATH' ) || exit;
 		
 	<?php 
 		if(is_page('185')) {
-			echo '<div class="container">';
+			echo '<div class="container">'; // Services page
 		}
 		else {
 		echo '<div class="container full-height" style="padding-top: var(--space-mega);">';
 		}
 		?>
-
 				<?php
 				the_content();
 				understrap_link_pages();
-				?>
-		
+				?>		
+
 		</div>
 
 	</div><!-- .entry-content -->

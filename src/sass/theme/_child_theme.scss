@@ -29,7 +29,7 @@ html {
     border-radius: unset;
 }
 
-// Scroll progress animation
+// Scroll progress animation along top
 .scroll-watcher {
     height: 6px;
     position: fixed;
@@ -60,10 +60,29 @@ img[class*='wp-image-'] {
     border-radius: 24px;
 }
 
+
 .wp-block-cover img {
     border-radius: 0px;
 }
 
+.container .wp-block-group {
+    @extend .container;
+    padding: 5% 20px;
+
+    a {
+        text-decoration: none;
+        color: $primary;
+
+        &:hover {
+            color: $secondary;
+        }
+    }
+}
+
+
+.wp-block-columns {
+    padding-left:7px;
+}
 
 
 // Service cards
@@ -116,3 +135,50 @@ img[class*='wp-image-'] {
 .full-height {
     min-height: 80vh;
 }
+
+
+// ACF two-column
+.full-width-two-column {
+    /* width: 100vw; */
+    position: relative;
+    /* left: calc(-50vw + 50%); */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.full-width-two-column .wp-block-column {   
+    margin: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    flex: 1;
+}
+
+.full-width-two-column .wp-block-column:first-child {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.full-width-two-column .wp-block-column:nth-child(2) {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+// ACF two-column - end
+
+// Scroll section animation
+@media (prefers-reduced-motion: no-preference) {
+    .section-animation {
+        opacity: 0;
+        animation: fade-in linear forwards;
+        animation-timeline: view();
+        animation-range: entry 100px;
+    }
+
+    @keyframes fade-in {
+        to {opacity: 1;}
+    }
+}
+// Scroll sectionfp animation - end

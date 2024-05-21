@@ -83,6 +83,7 @@ function cppchild_register_acf_blocks() {
 
 	 register_block_type( __DIR__ . '/blocks/two-column' );
 	 register_block_type( __DIR__ . '/blocks/three-column' );
+     register_block_type( __DIR__ . '/blocks/testimonial' );
 }
 // Here we call our cppchild_register_acf_block() function on init.
 add_action( 'init', 'cppchild_register_acf_blocks' );
@@ -138,19 +139,6 @@ function site_name_shortcode( ) {
 add_shortcode( 'site_name', 'site_name_shortcode' );
 
 
-// ACF Block rego
-add_action( 'init', 'register_acf_blocks' );
-
-function register_acf_blocks() {
-	 /**
-     * We register our block's with WordPress's handy
-     * register_block_type();
-     *
-     * @link https://developer.wordpress.org/reference/functions/register_block_type/
-     */
-	register_block_type( __DIR__ . '/blocks/testimonial' );
-}
-
 // Used to add class to custom logo
 add_filter( 'wp_get_attachment_image_attributes', function( $attr )
 {
@@ -160,9 +148,10 @@ add_filter( 'wp_get_attachment_image_attributes', function( $attr )
     return $attr;
 } );
 
-/* // adds excerpts ability to pages
+ // adds excerpts ability to pages
 add_post_type_support( 'page', 'excerpt' );
 
+/*
 // Changing excerpt more
 function new_excerpt_more($more) {
 	global $post;
@@ -182,7 +171,7 @@ remove_filter('get_the_excerpt', 'wp_trim_excerpt');
         'posts_per_page' => 6, // Number of pages to display
         'orderby' => 'date',   // Order by date
         'order' => 'DESC',     // Order descending
-        'post__in' => array(187, 195, 296, 352, 368) // Array of specific page IDs to include
+        'post__in' => array(187, 189, 195, 296, 352, 368) // Array of specific page IDs to include
     );
 
     // Custom query
@@ -219,3 +208,260 @@ remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 
 // Register the shortcode
 add_shortcode('subset_of_pages', 'display_subset_of_pages');
+
+
+// Two Column Block start
+
+// Register ACF block type
+function acf_two_column_block_register_block() {
+    // Check if function exists.
+    if( function_exists('acf_register_block_type') ) {
+        // Register a two-column block.
+        acf_register_block_type(array(
+            'name'              => 'two-column-block',
+            'title'             => __('Two Column Block'),
+            'description'       => __('A custom two-column block.'),
+            'render_callback'   => 'acf_two_column_block_render_callback',
+            'category'          => 'formatting',
+            'icon'              => 'columns',
+            'keywords'          => array( 'columns', 'two columns' ),
+            'enqueue_assets'    => function(){
+                wp_enqueue_style( 'acf-two-column-block-style', plugin_dir_url( __FILE__ ) . 'style.css' );
+            }
+        ));
+    }
+}
+add_action('acf/init', 'acf_two_column_block_register_block');
+
+// Render callback function
+function acf_two_column_block_render_callback( $block ) {
+    // Get field values
+    $column_1_content = get_field('column_1_content') ?: '';
+    $column_1_background_image = get_field('column_1_background_image');
+    $column_1_background_color = get_field('column_1_background_color') ?: '';
+    $column_1_button_text = get_field('column_1_button_text') ?: '';
+    $column_1_button_link = get_field('column_1_button_link') ?: '';
+
+    $column_2_content = get_field('column_2_content') ?: '';
+    $column_2_background_image = get_field('column_2_background_image');
+    $column_2_background_color = get_field('column_2_background_color') ?: '';
+    $column_2_button_text = get_field('column_2_button_text') ?: '';
+    $column_2_button_link = get_field('column_2_button_link') ?: '';
+
+    $image_side = get_field('image_side') ?: 'right';
+
+    // Prepare column content
+    $column_1_style = '';
+    if ($column_1_background_image) {
+        $column_1_style .= "background-image: url(" . esc_url($column_1_background_image) . ");";
+    }
+    if ($column_1_background_color) {
+        $column_1_style .= "background-color: " . esc_attr($column_1_background_color) . ";";
+    }
+
+    $column_2_style = '';
+    if ($column_2_background_image) {
+        $column_2_style .= "background-image: url(" . esc_url($column_2_background_image) . ");";
+    }
+    if ($column_2_background_color) {
+        $column_2_style .= "background-color: " . esc_attr($column_2_background_color) . ";";
+    }
+
+    $column_with_image = sprintf(
+        '<div class="wp-block-column" style="%s">
+            %s
+            %s
+        </div>',
+        esc_attr($column_2_style),
+        $column_2_content,
+        $column_2_button_text ? sprintf('<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
+        <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="%s">%s</a></div>
+        </div>', esc_url($column_2_button_link), esc_html($column_2_button_text)) : ''
+    );
+
+    $column_without_image = sprintf(
+        '<div class="wp-block-column" style="%s">
+            %s
+            %s
+        </div>',
+        esc_attr($column_1_style),
+        $column_1_content,
+        $column_1_button_text ? sprintf('<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
+        <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="%s">%s</a></div>
+        </div>', esc_url($column_1_button_link), esc_html($column_1_button_text)) : ''
+    );
+
+    // Render columns based on image side
+    if ($image_side === 'left') {
+        echo '<div class="full-width-two-column">' . $column_with_image . $column_without_image . '</div>';
+    } else {
+        echo '<div class="full-width-two-column">' . $column_without_image . $column_with_image . '</div>';
+    }
+}
+
+// ACF fields
+function acf_two_column_block_fields() {
+    if( function_exists('acf_add_local_field_group') ) {
+        acf_add_local_field_group(array(
+            'key' => 'group_two_column_block',
+            'title' => 'Two Column Block',
+            'fields' => array(
+                // Tab for Column 1
+                array(
+                    'key' => 'field_tab_column_1',
+                    'label' => 'Column 1',
+                    'type' => 'tab',
+                    'placement' => 'top',
+                    'wrapper' => array(
+                        'width' => '50',
+                    ),
+                ),
+                array(
+                    'key' => 'field_column_1_content',
+                    'label' => 'Column 1 Content',
+                    'name' => 'column_1_content',
+                    'type' => 'wysiwyg',
+                    'instructions' => 'Add content for the first column.',
+                    'wrapper' => array(
+                        'width' => '100',
+                    ),
+                ),
+                array(
+                    'key' => 'field_column_1_background_image',
+                    'label' => 'Column 1 Background Image',
+                    'name' => 'column_1_background_image',
+                    'type' => 'image',
+                    'instructions' => 'Select a background image for the first column.',
+                    'return_format' => 'url',
+                    'wrapper' => array(
+                        'width' => '100',
+                    ),
+                ),
+                array(
+                    'key' => 'field_column_1_background_color',
+                    'label' => 'Column 1 Background Color',
+                    'name' => 'column_1_background_color',
+                    'type' => 'color_picker',
+                    'instructions' => 'Select a background color for the first column.',
+                    'wrapper' => array(
+                        'width' => '100',
+                    ),
+                ),
+                array(
+                    'key' => 'field_column_1_button_text',
+                    'label' => 'Column 1 Button Text',
+                    'name' => 'column_1_button_text',
+                    'type' => 'text',
+                    'instructions' => 'Add text for the button in the first column.',
+                    'wrapper' => array(
+                        'width' => '100',
+                    ),
+                ),
+                array(
+                    'key' => 'field_column_1_button_link',
+                    'label' => 'Column 1 Button Link',
+                    'name' => 'column_1_button_link',
+                    'type' => 'url',
+                    'instructions' => 'Add the link for the button in the first column.',
+                    'wrapper' => array(
+                        'width' => '100',
+                    ),
+                ),
+                // Tab for Column 2
+                array(
+                    'key' => 'field_tab_column_2',
+                    'label' => 'Column 2',
+                    'type' => 'tab',
+                    'placement' => 'top',
+                    'wrapper' => array(
+                        'width' => '50',
+                    ),
+                ),
+                array(
+                    'key' => 'field_column_2_content',
+                    'label' => 'Column 2 Content',
+                    'name' => 'column_2_content',
+                    'type' => 'wysiwyg',
+                    'instructions' => 'Add content for the second column.',
+                    'wrapper' => array(
+                        'width' => '100',
+                    ),
+                ),
+                array(
+                    'key' => 'field_column_2_background_image',
+                    'label' => 'Column 2 Background Image',
+                    'name' => 'column_2_background_image',
+                    'type' => 'image',
+                    'instructions' => 'Select a background image for the second column.',
+                    'return_format' => 'url',
+                    'wrapper' => array(
+                        'width' => '100',
+                    ),
+                ),
+                array(
+                    'key' => 'field_column_2_background_color',
+                    'label' => 'Column 2 Background Color',
+                    'name' => 'column_2_background_color',
+                    'type' => 'color_picker',
+                    'instructions' => 'Select a background color for the second column.',
+                    'wrapper' => array(
+                        'width' => '100',
+                    ),
+                ),
+                array(
+                    'key' => 'field_column_2_button_text',
+                    'label' => 'Column 2 Button Text',
+                    'name' => 'column_2_button_text',
+                    'type' => 'text',
+                    'instructions' => 'Add text for the button in the second column.',
+                    'wrapper' => array(
+                        'width' => '100',
+                    ),
+                ),
+                array(
+                    'key' => 'field_column_2_button_link',
+                    'label' => 'Column 2 Button Link',
+                    'name' => 'column_2_button_link',
+                    'type' => 'url',
+                    'instructions' => 'Add the link for the button in the second column.',
+                    'wrapper' => array(
+                        'width' => '100',
+                    ),
+                ),
+                // Image Side Field
+                array(
+                    'key' => 'field_image_side',
+                    'label' => 'Image Side',
+                    'name' => 'image_side',
+                    'type' => 'select',
+                    'instructions' => 'Choose which side the background image will be on.',
+                    'choices' => array(
+                        'left' => 'Left',
+                        'right' => 'Right',
+                    ),
+                    'default_value' => 'right',
+                    'allow_null' => 0,
+                    'multiple' => 0,
+                    'ui' => 1,
+                    'return_format' => 'value',
+                    'wrapper' => array(
+                        'width' => '100',
+                    ),
+                ),
+            ),
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'block',
+                        'operator' => '==',
+                        'value' => 'acf/two-column-block',
+                    ),
+                ),
+            ),
+        ));
+    }
+}
+add_action('acf/init', 'acf_two_column_block_fields');
+
+
+// Two Column Block end
